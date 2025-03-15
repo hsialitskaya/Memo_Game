@@ -17,7 +17,7 @@ def test_bubble_sort():
 
 
 def show_results(screen, font, gameWidht, gameHeight, results,BACKGROUND_COLOR,DEEPPINK_COLOR,BLACK):
-    # Отрисовка кнопки "Ponownie"
+
     screen.fill(BACKGROUND_COLOR)
     restart_button_rect1 = pygame.Rect(gameWidht - 450, gameHeight - 60, 200, 50)
     restart_button_color1 = pygame.Color(DEEPPINK_COLOR)
@@ -26,7 +26,6 @@ def show_results(screen, font, gameWidht, gameHeight, results,BACKGROUND_COLOR,D
     pygame.draw.rect(screen, restart_button_color1, restart_button_rect1)
     screen.blit(restart_button_text1, restart_button_text_rect1)
 
-    # Отрисовка кнопки "Koniec"
 
     restart_button_rect2 = pygame.Rect(gameWidht - 210, gameHeight - 60, 200, 50)
     restart_button_color2 = pygame.Color(DEEPPINK_COLOR)
@@ -38,22 +37,22 @@ def show_results(screen, font, gameWidht, gameHeight, results,BACKGROUND_COLOR,D
     waiting_for_key = True
     sorted_results = bubble_sort(results)
 
-    # Надпись вверх поля
-    header_text = font.render("Wyniki gry", True, BLACK)
-    header_rect = header_text.get_rect(center=(gameWidht // 2, 50))  # Расположение надписи верху
-    screen.blit(header_text, header_rect)  # Отображение надписи
 
-    y_position = 100  # начальное значение вертикальной координаты
+    header_text = font.render("Wyniki gry", True, BLACK)
+    header_rect = header_text.get_rect(center=(gameWidht // 2, 50))
+    screen.blit(header_text, header_rect)
+
+    y_position = 100
     result_number = 1
     for player, elapsed_time in sorted_results:
         result_text = f"{result_number}) {player}: {elapsed_time:.2f} sek"
-        result_surface = font.render(result_text, True, BLACK)  # текст на экране
-        result_rect = result_surface.get_rect(topleft=(10, y_position))  # расположение текста
+        result_surface = font.render(result_text, True, BLACK)
+        result_rect = result_surface.get_rect(topleft=(10, y_position))
         screen.blit(result_surface, result_rect)
-        y_position += 30  # сдиг вниз для кадого нового результата
+        y_position += 30
         result_number += 1
 
-    pygame.display.flip()  # Обновление экрана
+    pygame.display.flip()
     assert restart_button_rect1.width > 0, "Szerokość restart_button_rect1 powinna być większa niż 0."
     assert restart_button_rect2.height > 0, "Wysokość restart_button_rect2 powinna być większa niż 0."
     return restart_button_rect1, restart_button_rect2

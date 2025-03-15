@@ -1,5 +1,5 @@
 import pygame
-# переменные
+
 gameWidht = 840
 gameHeight = 640
 columns = 4
@@ -20,10 +20,10 @@ hidden = False
 restart_button_rect1 = None
 restart_button_rect2 = None
 
-# Начальная инициализация экрана
-screen = pygame.display.set_mode((gameWidht, gameHeight))  # ширина и длина нашего окошка игры
-screen.fill(BACKGROUND_COLOR)  # цвет фона
-pygame.display.flip()  # после отрисовки всего, показываем экран
-pygame.display.set_caption("My Game")  # название игры
-gameIcon = pygame.image.load('imageicon/animal.png')  # создание иконки
+
+screen = pygame.display.set_mode((gameWidht, gameHeight))
+screen.fill(BACKGROUND_COLOR)
+pygame.display.flip()
+pygame.display.set_caption("My Game")
+gameIcon = pygame.image.load('logo_icon/animal.png')
 pygame.display.set_icon(gameIcon)

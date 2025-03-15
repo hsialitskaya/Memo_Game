@@ -3,11 +3,11 @@ import time
 import sys
 pygame.init()
 
-from moduls.config import *
-from moduls.name import get_player_name
-from moduls.new_game import start_new_game
-from moduls.results import show_results,bubble_sort,test_bubble_sort
-from moduls.the_same import are_the_same,test_are_the_same
+from modules.config import *
+from modules.name import get_player_name
+from modules.new_game import start_new_game
+from modules.results import show_results,bubble_sort,test_bubble_sort
+from modules.the_same import are_the_same,test_are_the_same
 
 def main_game_loop(screen, font, gameWidht, gameHeight, running, player_name, restart_button_rect1, restart_button_rect2):
     pictures_name, pictures, pictures_rectangle, hidden = start_new_game(picture_size_Widht,picture_size_Height,margin_left,margin_top,padding,columns)
