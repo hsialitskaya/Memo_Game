@@ -48,5 +48,8 @@ python main.py
 4. The goal is to find all pairs in the fewest possible moves.
 5. At the end, check your position in the ranking list!
 
+## License
+Memo Game: Animal and Color Matching is licensed under the MIT License. See [LICENSE](https://github.com/hsialitskaya/Memo_Game/blob/main/LICENSE) for more information.
+
 
 Happy coding and have fun playing Memo Game! 🎉
